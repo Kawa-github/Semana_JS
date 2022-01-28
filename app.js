@@ -6,8 +6,9 @@
 */
 
 const randomNumbers = [10, 30, 15, 25, 50, 40, 5]
-const numbersImpares = randomNumbers.filter(number => number % 2 === 1 )
-console.log(numbersImpares)
+const numerosImpares = number => number % 2 === 1 
+const resultado = randomNumbers.filter(numerosImpares)
+console.log('Impares: ', resultado)
 console.log('\n')
 /*
   02
@@ -83,7 +84,11 @@ const tvShows = [
   { name: 'Watchmen', releaseYear: 2019 }
 ]
 
-const nomeSeries = tvShows.map(serie => serie.name)
+// const nomeSeries = tvShows.map(serie => serie.name)
+// console.log('Nomes das séries: ' , nomeSeries)
+
+/*destructuring assignment*/
+const nomeSeries = tvShows.map(({name}) => name)
 console.log('Nomes das séries: ' , nomeSeries)
 
 /*
@@ -111,6 +116,11 @@ const nomeJogos = cart.forEach(item => {
 })
 
 
+const productList = cart.reduce((acumulador,product)=> {
+  return `${acumulador}- ${product.name}\n`
+},'')
+
+console.log("\nCom REDUCE", productList)
 
 
 /*
